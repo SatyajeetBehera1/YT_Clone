@@ -4,9 +4,10 @@ import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle } from "../utils/constants";
+import { BorderColor } from '@mui/icons-material';
 
 const VideoCard = ({ video: { id: { videoId }, snippet:{thumbnails:{high:{url}}, title, channelId, channelTitle}} }) => (
-  <Card sx={{ width: { xs: '100%', sm: '358px', md: "320px", }, boxShadow: "none", borderRadius: "10px" }}>
+  <Card sx={{ width: { xs: '100%', sm: '358px', md: "320px", }, boxShadow: "none", borderRadius: "20px", outline:"none", background:"none"}}>
     <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY` }>
       <CardMedia image={url || demoThumbnailUrl} alt={title} 
         sx={{ width: { xs: '100%', sm: '358px'}, height: 180 }} 
