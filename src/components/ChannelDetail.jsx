@@ -24,7 +24,7 @@ const ChannelDetail = () => {
 
     fetchResults();
   }, [id]);
-  
+   
   return (
     <Box minHeight="95vh">
       <Box>
