@@ -18,7 +18,6 @@ int binary_search_leftmost(int arr[], int size, int target, int *comparisons) {
             right = mid - 1;
         }
     }
-
     return position;
 }
 
