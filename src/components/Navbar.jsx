@@ -12,5 +12,5 @@ const Navbar = () => (
     <SearchBar />
   </Stack>
 );
-
+ 
 export default Navbar;
