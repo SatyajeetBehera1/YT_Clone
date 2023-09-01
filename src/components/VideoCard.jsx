@@ -28,5 +28,5 @@ const VideoCard = ({ video: { id: { videoId }, snippet:{thumbnails:{high:{url}},
     </CardContent>
   </Card>
 );
-
+ 
 export default VideoCard
