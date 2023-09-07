@@ -1,48 +1,75 @@
-// #include <stdio.h>
+#include <stdio.h>
 
-// int binary_search_leftmost(int arr[], int size, int target, int *comparisons) {
-//     int left = 0, right = size - 1;
-//     int position = -1;
+// struct Item {
+//     int item_id;
+//     double item_profit;
+//     double item_weight;
+//     double profit_weight_ratio;
+// };
 
-//     *comparisons = 0;
-
-//     while (left <= right) {
-//         int mid = left + (right - left) / 2;
-//         (*comparisons)++;
-//         if (arr[mid] == target) {
-//             position = mid;
-//             right = mid - 1;
-//         } else if (arr[mid] < target) {
-//             left = mid + 1;
-//         } else {
-//             right = mid - 1;
+// void selectionSort(struct Item items[], int num_items) {
+//     int i, j;
+//     for (i = 0; i < num_items - 1; i++) {
+//         int max_index = i;
+//         for (j = i + 1; j < num_items; j++) {
+//             if (items[j].profit_weight_ratio > items[max_index].profit_weight_ratio) {
+//                 max_index = j;
+//             }
 //         }
+//         struct Item temp = items[i];
+//         items[i] = items[max_index];
+//         items[max_index] = temp;
 //     }
-//     return position;
 // }
 
 // int main() {
-//     int arr[] = {2, 4, 4, 4, 6, 8, 10};
-//     int size = sizeof(arr) / sizeof(arr[0]);
-//     int target = 4;
+//     int num_items;
+//     printf("Enter the number of items: ");
+//     scanf("%d", &num_items);
 
-//     int comparisons;
-//     int position = binary_search_leftmost(arr, size, target, &comparisons);
+//     struct Item items[num_items];
 
-//     if (position != -1) {
-//         printf("Element %d found at index %d, leftmost appearance.\n", target, position);
-//     } else {
-//         printf("Element %d not found in the array.\n", target);
+//     for (int i = 0; i < num_items; i++) {
+//         printf("Enter the profit and weight of item no %d: ", i + 1);
+//         scanf("%lf %lf", &items[i].item_profit, &items[i].item_weight);
+//         items[i].profit_weight_ratio = items[i].item_profit / items[i].item_weight;
+//         items[i].item_id = i + 1;
 //     }
 
-//     printf("Number of comparisons made: %d\n", comparisons);
+//     double capacity;
+//     printf("Enter the capacity of knapsack: ");
+//     scanf("%lf", &capacity);
+//     selectionSort(items, num_items);
+
+//     double max_profit = 0.0;
+//     printf("Item No profit Weight Amount to be taken\n");
+//     for (int i = 0; i < num_items; i++) {
+//         if (capacity >= items[i].item_weight) {
+//             printf("%d %.6lf %.6lf %.6lf\n", items[i].item_id, items[i].item_profit, items[i].item_weight, 1.0);
+//             max_profit += items[i].item_profit;
+//             capacity -= items[i].item_weight;
+//         } else {
+//             double fraction = capacity / items[i].item_weight;
+//             printf("%d %.6lf %.6lf %.6lf\n", items[i].item_id, items[i].item_profit, items[i].item_weight, fraction);
+//             max_profit += fraction * items[i].item_profit;
+//             break;
+//         }
+//     }
+
+//     printf("Maximum profit: %.2lf\n", max_profit);
 
 //     return 0;
 // }
 
-#include <stdio.h>
-
 void main(){
-    int a=1;
-    printf("%d %d %d",a,a++,++a);
+    float a = 3.2;
+    // printf("%d %d %d", a, a++, ++a);
+
+    if (a==3.2)
+    {  
+        printf("hello");
+    }else{
+        printf("world");
+    }
+    printf("\n%f",a);
 }
